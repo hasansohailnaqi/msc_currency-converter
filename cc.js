@@ -38,5 +38,6 @@ let cnvData = async (data) => {
     let res = await cnvData.json();
     return res.conversion_rate;
 };
-let a = await cnvData(cnv);
-console.log(a);
+let cnvRate = await cnvData(cnv);
+let convertedRate = userMoney.money * cnvRate;
+console.log(`your ${chalk.bold.greenBright(firstCuntry.name)}  ${chalk.bold.greenBright(userMoney.money)} in ${chalk.bold.greenBright(secondCuntry.name)} is ${chalk.bold.greenBright(convertedRate)}`);

@@ -1,5 +1,6 @@
 
 import chalk from "chalk";
+import { Console } from "console";
 import inquirer from "inquirer";
 
 //currency converter api link
@@ -60,6 +61,13 @@ let res = await cnvData.json()
 return res.conversion_rate;
 };
 
-let a = await cnvData(cnv);
+let cnvRate = await cnvData(cnv);
 
-console.log(a);
+let convertedRate = userMoney.money * cnvRate
+
+
+console.log(`your ${chalk.bold.greenBright
+    (firstCuntry.name)}  ${chalk.bold.greenBright(userMoney.money)} in ${chalk.bold.greenBright
+        (secondCuntry.name)} is ${chalk.bold.greenBright(convertedRate)}`);
+
+
